@@ -1,0 +1,14 @@
+if [ -d "$1" ]; then
+  d1=$(realpath $1)
+  shift
+else
+  d1=${0:a:h}
+fi
+args=("'.'" "$d1"  $@ '-x' 'echo' '{.}' '|' 'sed' "'s_:_\\:_g ; s:^$d1/::'")
+
+d2=$(fzd $args)
+if [ -z "$d2" ]; then
+  return
+fi
+
+z "$d1/$d2"

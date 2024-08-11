@@ -1,0 +1,6 @@
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+romkatv/powerlevel10k
+ohmyzsh/ohmyzsh path:plugins/eza
+ohmyzsh/ohmyzsh path:plugins/nvm
+ohmyzsh/ohmyzsh path:plugins/zoxide

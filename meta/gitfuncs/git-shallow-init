@@ -1,0 +1,47 @@
+#!/bin/zsh
+
+usage() {
+  echo "Usage: git shallow-init
+  -r remote
+  -b branch
+  -d dir
+
+Example: git shallow-init -r https://github.com/user/repo.git -b main -d /path/to/dir [git-fetch args]"
+
+  exit 1
+}
+
+zparseopts -D -E -- \
+  r:=remote_opt b:=branch_opt d:=dir_opt
+
+remote_arg="${remote_opt[2]}"
+branch_arg="${branch_opt[2]}"
+dir_arg="${dir_opt[2]}"
+
+# Fail if no remote
+if [[ -z "${remote_arg}" ]]; then
+  echo "Error: remote is required"
+  usage
+fi
+
+# Default dir
+if [[ -z "${dir_arg}" ]]; then
+  dir_arg="$(basename ${remote_arg} .git)"
+fi
+
+# Init
+mkdir -p "$dir_arg"
+git -C "$dir_arg" init
+git -C "$dir_arg" remote add remote "$remote_arg"
+
+trap 'usage' ERR
+
+# Default branch
+if [[ -z "${branch_arg}" ]]; then
+  branch_arg="$(git -C "$dir_arg" ls-remote --symref "$remote_arg" HEAD | sed -n 's@^ref: refs/heads/\(.*\)\tHEAD$@\1@p')"
+fi
+
+git -C "$dir_arg" fetch --depth 1 remote "$branch_arg" $@
+git -C "$dir_arg" checkout "$branch_arg"
+
+echo "Shallow-initialized $remote_arg/$branch_arg in $dir_arg"

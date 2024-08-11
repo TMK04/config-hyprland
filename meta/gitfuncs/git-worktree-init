@@ -1,0 +1,36 @@
+#!/bin/zsh
+
+usage() {
+  echo "Usage: git worktree-init
+  -r remote
+  -d dir
+
+Example: git worktree-init -r https://github.com/user/repo.git -d /path/to/dir [git-clone args]"
+
+  exit 1
+}
+
+zparseopts -D -E -- \
+  r:=remote_opt d:=dir_opt
+
+remote_arg="${remote_opt[2]}"
+dir_arg="${dir_opt[2]}"
+
+# Fail if no remote
+if [[ -z "${remote_arg}" ]]; then
+  echo "Error: remote is required"
+  usage
+fi
+
+# Default dir
+if [[ -z "${dir_arg}" ]]; then
+  dir_arg="$(basename ${remote_arg} .git)"
+fi
+
+# Init
+mkdir -p "$dir_arg"
+git -C "$dir_arg" clone --bare "$remote_arg" .bare $@
+echo "gitdir: ./.bare" > "$dir_arg/.git"
+mkdir -p "$dir_arg/.bare.worktrees"
+
+echo "worktree-initialized $remote_arg in $dir_arg"

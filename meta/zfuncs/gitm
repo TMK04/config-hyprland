@@ -1,0 +1,8 @@
+# gitm(any) - Run multiple git commands at once
+
+# Split $@ by ,
+command_str="$@"
+command_arr=(${(@s:,:)command_str})
+for cmd in $command_arr; do
+  git ${=cmd}
+done

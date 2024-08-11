@@ -1,0 +1,9 @@
+[submodule "antidote"]
+	path = meta/antidote
+	url = https://github.com/mattmc3/antidote
+[submodule "fzf-tab"]
+	path = meta/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
+[submodule "kmonad"]
+	path = meta/kmonad
+	url = https://github.com/kmonad/kmonad

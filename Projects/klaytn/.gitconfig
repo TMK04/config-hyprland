@@ -1,0 +1,8 @@
+[user]
+  name = khoa-klaytn
+  email = mk.tran@klaytn.foundation
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJD/AmW7qzGi/ksOdk7v78yitKHt6syByEcWxPVnLGuA
+
+[url "git_khoa-klaytn:"]
+	insteadOf = git@github.com:
+	insteadOf = https://github.com/

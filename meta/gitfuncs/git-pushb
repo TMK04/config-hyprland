@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+usage() {
+  echo "Usage: git pushb
+  -r remote_name
+
+Example: git pushb -r upstream [git-push args]"
+
+  exit 1
+}
+
+zparseopts -D -E -- \
+  r:=remote_name_opt
+
+remote_name_arg="${remote_name_opt[2]}"
+dir_arg="${dir_opt[2]}"
+
+# Default remote_name
+if [[ -z "${remote_name_arg}" ]]; then
+  remote_name_arg='origin'
+fi
+
+branch_arg="$(git branch --show-current)"
+
+# Init
+git push "$remote_name_arg" "$branch_arg" $@

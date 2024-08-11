@@ -1,0 +1,7 @@
+if [ -d "$1" ]; then
+  d1=$(realpath $1)
+  shift
+else
+  d1=${0:a:h}
+fi
+fd --type d '.' "$d1" $@ -x echo {.} | sed "s_:_\\:_g ; s:^$d1/::"

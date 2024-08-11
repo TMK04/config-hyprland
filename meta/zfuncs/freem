@@ -1,0 +1,5 @@
+total_bytes="$(memory_pressure | sed -n 's/^The system has \([0-9]*\) .*$/\1/p')"
+free_percentage="$(memory_pressure | sed -n 's/^System-wide memory free percentage: \([0-9]*\)%$/\1/p')"
+free_bytes="$(echo "$total_bytes * $free_percentage / 100" | bc)"
+
+echo "$(numfmt --to=iec-i --suffix=B $free_bytes)/$(numfmt --to=iec-i --suffix=B $total_bytes) ($free_percentage% free)"

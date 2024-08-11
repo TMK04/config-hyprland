@@ -1,0 +1,21 @@
+acmd_a="$(ps -u "$USER" | awk 'NR>1 { print $4 }')"
+
+if !(echo "$acmd_a" | rg '1password' > /dev/null)
+then
+  1password --silent &
+fi
+
+if !(echo "$acmd_a" | rg 'fcitx5' > /dev/null)
+then
+  fcitx5 -d &
+fi
+
+if !(echo "$acmd_a" | rg 'nm-applet' > /dev/null)
+then
+  nm-applet &
+fi
+
+if !(echo "$acmd_a" | rg 'waybar' > /dev/null)
+then
+  waybar &
+fi

@@ -1,0 +1,36 @@
+#!/bin/zsh
+
+usage() {
+  echo "Usage: git sparse-init
+  -r remote
+  -d dir
+
+Example: git sparse-init -r https://github.com/user/repo.git -d /path/to/dir"
+
+  exit 1
+}
+
+zparseopts -D -- \
+  r:=remote_opt d:=dir_opt
+
+remote_arg="${remote_opt[2]}"
+dir_arg="${dir_opt[2]}"
+
+# Fail if no remote
+if [[ -z "${remote_arg}" ]]; then
+  echo "Error: remote is required"
+  usage
+fi
+
+# Default dir
+if [[ -z "${dir_arg}" ]]; then
+  dir_arg="$(basename ${remote_arg} .git)"
+fi
+
+# Init
+mkdir -p "$dir_arg"
+git -C "$dir_arg" init
+git -C "$dir_arg" remote add remote "$remote_arg"
+git -C "$dir_arg" sparse-checkout init
+
+echo "Sparse-initialized $remote_arg in $dir_arg"
