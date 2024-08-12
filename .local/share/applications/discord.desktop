@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Vencord
+GenericName=Discord Vesktop
+Exec=/home/floer/.appimages/Vesktop-1.5.3.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+Icon=/home/floer/.appimages/Vesktop-icon.png

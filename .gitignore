@@ -20,6 +20,12 @@
 !/.config/1Password/ssh/agent.toml
 !/.config/op/
 !/.config/op/plugins.sh
+!/.local/
+!/.local/share/
+!/.local/share/applications/
+!/.local/share/applications/btop.desktop
+!/.local/share/applications/discord.desktop
+!/.local/share/applications/prismlauncher.desktop
 !/.ssh/
 !/.ssh/*.pub
 !/.ssh/config
