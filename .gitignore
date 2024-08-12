@@ -8,7 +8,9 @@
 !/.zprofile
 !/.zshrc
 !/LICENSE
+!/flatpak.txt
 !/setup.zsh
+!/yay.txt
 
 # Submodules
 !/.nvm
