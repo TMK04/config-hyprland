@@ -1,0 +1,6 @@
+[Unit]
+Description=ASUS Fans On
+[Service]
+ExecStart=/usr/lib/systemd/system/asus-fans-on.sh
+[Install]
+WantedBy=multi-user.target
