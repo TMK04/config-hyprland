@@ -1,5 +1,19 @@
 *
 
+# Top-level
+!/.gitconfig
+!/.gitignore
+!/.gitmodules
+!/.zlogout
+!/.zprofile
+!/.zshrc
+!/LICENSE
+!/setup.zsh
+
+# Submodules
+!/.nvm
+
+# Nested
 !/.config/
 !/.config/1Password/
 !/.config/1Password/ssh/
@@ -20,13 +34,5 @@
 !/Projects/tmk04/
 !/Projects/tmk04/.gitconfig
 
-!/.gitconfig
-!/.gitignore
-!/.gitmodules
-!/.zlogout
-!/.zprofile
-!/.zshrc
-!/LICENSE
-!/setup.zsh
-
+# Global
 .DS_Store
