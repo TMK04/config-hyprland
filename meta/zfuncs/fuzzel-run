@@ -1,0 +1,36 @@
+#!/bin/zsh
+
+awhence_a=($(whence -m '*' | sort --version-sort -r | rg -v '^\W+$'))
+typeset -A acache=()
+auq_whence_a=()
+
+acache[$HOME]='~'
+acache_home="$("$HOME/meta/zfuncs/uqd" "$HOME")/"
+
+for awhence in $awhence_a; do
+  if [[ "$awhence" = '/'* ]]; then
+    adir="${awhence%/*}"
+    if [[ -v acache[$adir] ]]; then
+      auq_dir="${acache[$adir]}"
+    else
+      auq_dir="$("$HOME/meta/zfuncs/uqd" "$adir")"
+      if [[ "$auq_dir" = "$acache_home"* ]]; then
+        auq_dir="~${auq_dir[${#acache_home},-1]}"
+      fi
+      acache[$adir]="$auq_dir"
+    fi
+    abasename="${awhence##*/}"
+    awhence=("$auq_dir/$abasename")
+  fi
+  auq_whence_a+=("$awhence")
+done
+
+awhence_str="${(j.\n.)auq_whence_a}"
+achoice="$(echo "$awhence_str" | fuzzel --dmenu --index)"
+if [[ -z "$achoice" ]]; then
+  exit
+fi
+(( achoice += 1 ))
+achoice="${awhence_a[$achoice]}"
+
+foot zsh -c "$achoice; $SHELL"

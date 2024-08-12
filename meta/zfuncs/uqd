@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+apart_a=(${(s./.)1})
+
+adir=''
+auq_dir=''
+for apart in $apart_a; do
+  auq_part=''
+  for i in {1..${#apart}}; do
+    auq_part+="${apart[$i]}"
+    amatch_a=("$adir"/"$auq_part"*/)
+    if (( ${#amatch_a} == 1 )); then
+      break
+    fi
+  done
+  auq_dir+="/$auq_part"
+  adir+="/$apart"
+done
+
+echo "$auq_dir"
