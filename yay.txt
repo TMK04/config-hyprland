@@ -28,13 +28,14 @@ extra-cmake-modules
 eza
 fcitx5-gtk
 fcitx5-lua
-firefox
 flatpak
 font-manager
 foot
 fsarchiver
 fuzzel
+gamemode
 gamescope
+git-lfs
 glances
 grub
 haveged
@@ -48,6 +49,7 @@ hyprpicker
 inetutils
 jfsutils
 libva-nvidia-driver
+links
 linux-lts
 logrotate
 lsscsi
@@ -72,6 +74,7 @@ polkit-gnome
 power-profiles-daemon
 protonup-qt
 pv
+rclone
 rebuild-detector
 reflector-simple
 rustup

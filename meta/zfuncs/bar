@@ -5,14 +5,19 @@ then
   1password --silent &
 fi
 
+if !(echo "$acmd_a" | rg 'nm-applet' > /dev/null)
+then
+  nm-applet &
+fi
+
 if !(echo "$acmd_a" | rg 'fcitx5' > /dev/null)
 then
   fcitx5 -d &
 fi
 
-if !(echo "$acmd_a" | rg 'nm-applet' > /dev/null)
+if !(echo "$acmd_a" | rg 'swaync' > /dev/null)
 then
-  nm-applet &
+  swaync &
 fi
 
 if !(echo "$acmd_a" | rg 'waybar' > /dev/null)

@@ -124,7 +124,7 @@
         "bat": "BAT2"
     },
     "wireplumber": {
-        // "scroll-step": 1, // %, can be a float
+        "scroll-step": 0.2, // %, can be a float
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": " {icon}",
@@ -141,7 +141,7 @@
             "default": ["", "", ""]
         },
         "on-click": "flatpak run org.pulseaudio.pavucontrol",
-        "on-click-right": "flatpak run io.github.dimtpap.coppwr"
+        "on-click-right": "flatpak run org.rncbc.qpwgraph"
     },
     "custom/media": {
         "format": "{icon} {}",

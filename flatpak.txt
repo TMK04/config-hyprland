@@ -1,2 +1,6 @@
-io.github.dimtpap.coppwr
+com.github.Matoking.protontricks
+io.github.zen_browser.zen
+org.filezillaproject.Filezilla
+org.mozilla.firefox
 org.pulseaudio.pavucontrol
+org.rncbc.qpwgraph
