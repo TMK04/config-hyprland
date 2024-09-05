@@ -79,9 +79,19 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%a %H%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "mode-mon-col": 3,
+        "calendar": {
+          "format": {
+            "today": "<span color='#ff0088'><b><u>{}</u></b></span>",
+          },
+        },
+        "actions": {
+          "on-click-right": "mode",
+          "on-scroll-down": "shift_down",
+          "on-scroll-up":   "shift_up",
+        },
     },
     "cpu": {
         "format": "{usage}% ",
