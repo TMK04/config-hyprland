@@ -1,0 +1,94 @@
+#!/bin/zsh
+
+# hyprctl binds array
+ahb_a=(${(f)"$(hyprctl binds)"})
+# fuzzel bind array
+afb_a=()
+# command array
+ac_a=()
+
+afield='bind'
+# afb assoc array
+typeset -A afb_aa=()
+for ahb in $ahb_a; do
+  case "$afield" in
+    bind)
+      afb_aa[bind]="${ahb[5,-1]}"
+      afield='modmask'
+      ;;
+    modmask)
+      avalue="${ahb[11,-1]}"
+      afb_aa[modmask]=''
+      (( avalue & 64 == 64 )) && afb_aa[modmask]+='󰘳 '
+      (( avalue & 8 == 8 ))   && afb_aa[modmask]+='󰘵 '
+      (( avalue & 4 == 4 ))   && afb_aa[modmask]+='󰘴 '
+      (( avalue & 1 == 1 ))   && afb_aa[modmask]+='󰘶 '
+      afield='submap'
+      ;;
+    submap)
+      afield='key'
+      ;;
+    key)
+      avalue="${ahb[7,-1]}"
+      case "$avalue" in
+        APOSTROPHE) avalue="'" ;;
+        BACKSLASH)  avalue='\' ;;
+        COMMA)      avalue=',' ;;
+        GRAVE)      avalue='`' ;;
+        PERIOD)     avalue='.' ;;
+        SEMICOLON)  avalue=';' ;;
+        SLASH)      avalue='/' ;;
+        DOWN)   avalue='󰁅' ;;
+        LEFT)   avalue='󰁍' ;;
+        RIGHT)  avalue='󰁔' ;;
+        UP)     avalue='󰁝' ;;
+        RETURN) avalue='󰌑 ' ;;
+        SPACE)  avalue='󱁐' ;;
+        TAB)    avalue='󰌒 ' ;;
+        XF86AudioLowerVolume) avalue='󰝞' ;;
+        XF86AudioRaiseVolume) avalue='󰝝' ;;
+      esac
+      afb_aa[key]="$avalue"
+      afield='keycode'
+      ;;
+    keycode) afield='catchall' ;;
+    catchall) afield='description' ;;
+    description)
+      afield='dispatcher'
+      ;;
+    dispatcher)
+      avalue="${ahb[14,-1]}"
+      afb_aa[dispatcher]="$avalue"
+      afield='arg'
+      ;;
+    arg)
+      afb_s=''
+      [ "${afb_aa[modmask]}" ] && afb_s+="${afb_aa[modmask]}"
+      afb_s+="${afb_aa[key]}"
+      [ "${afb_aa[bind]}" ] && afb_s+=" (${afb_aa[bind]})"
+      afb_s+=' 󰄾 '
+      avalue="${ahb[7,-1]}"
+      if [[ "${afb_aa[dispatcher]}" != 'exec' ]]; then
+        afb_s+="${afb_aa[dispatcher]}"
+        if [ "$avalue" ]; then
+          afb_s+=', '
+        fi
+      fi
+      if [ "$avalue" ]; then
+        afb_s+="$avalue"
+      fi
+      ac_a+=("${afb_aa[dispatcher]} $avalue")
+      afb_a+=("$afb_s")
+      afield='bind'
+      ;;
+  esac
+done
+
+afb_str="${(j.\n.)afb_a}"
+achoice="$(echo "$afb_str" | fuzzel --dmenu --index)"
+if [[ -z "$achoice" ]]; then
+  exit
+fi
+(( achoice += 1 ))
+achoice="${ac_a[$achoice]}"
+hyprctl dispatch $achoice
