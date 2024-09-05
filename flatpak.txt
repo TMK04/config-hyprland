@@ -1,6 +1,8 @@
 com.github.Matoking.protontricks
+com.github.PintaProject.Pinta
 io.github.zen_browser.zen
 org.filezillaproject.Filezilla
+org.kde.krita
 org.mozilla.firefox
 org.pulseaudio.pavucontrol
 org.rncbc.qpwgraph
