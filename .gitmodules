@@ -14,3 +14,6 @@
 [submodule "kmonad"]
 	path = meta/kmonad
 	url = https://github.com/kmonad/kmonad
+[submodule "meta/youtube-music"]
+	path = meta/youtube-music
+	url = https://github.com/th-ch/youtube-music

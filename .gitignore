@@ -43,6 +43,7 @@
 !/.local/share/applications/btop.desktop
 !/.local/share/applications/discord.desktop
 !/.local/share/applications/prismlauncher.desktop
+!/.local/share/applications/youtube-music.desktop
 !/.ssh/
 !/.ssh/*.pub
 !/.ssh/config
