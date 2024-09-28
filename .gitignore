@@ -21,6 +21,8 @@
 !/.config/1Password/
 !/.config/1Password/ssh/
 !/.config/1Password/ssh/agent.toml
+!/.config/ags/
+!/.config/ags/**/*
 !/.config/fcitx5/
 !/.config/fcitx5/profile
 !/.config/fontconfig/
@@ -35,8 +37,6 @@
 !/.config/systemd/system/
 !/.config/systemd/system/**/*
 !/.config/systemd/sync-system.sh
-!/.config/waybar/
-!/.config/waybar/config.jsonc
 !/.local/
 !/.local/share/
 !/.local/share/applications/

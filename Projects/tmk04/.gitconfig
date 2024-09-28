@@ -2,7 +2,6 @@
 	name = TMK04
 	email = floer.learner.01@gmail.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMUjtYL2iBJGSjQcpSOd0poQoDPq2uN2BoCNvvEOOapO
-
-[url "git_tmk04:"]
-	insteadOf = git@github.com:
-	insteadOf = https://github.com/
+[url "git_khoa-klaytn:"]
+  insteadOf = git@github.com:
+  insteadOf = https://github.com/
