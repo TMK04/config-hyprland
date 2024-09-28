@@ -45,7 +45,6 @@
 !/.local/share/applications/prismlauncher.desktop
 !/.local/share/applications/youtube-music.desktop
 !/.ssh/
-!/.ssh/*.pub
 !/.ssh/config
 !/.ssh/local-config.example
 !/.vscode/
@@ -53,8 +52,6 @@
 !/meta/
 !/meta/**/*
 !/Projects/
-!/Projects/klaytn/
-!/Projects/klaytn/.gitconfig
 !/Projects/tmk04/
 !/Projects/tmk04/.gitconfig
 

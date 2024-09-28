@@ -1,7 +1,7 @@
 adot="$HOME/."
 ameta="$HOME/meta/"
 
-export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 source "${adot}config/op/plugins.sh"
 export PATH="${adot}local/bin:${ameta}gitfuncs:$PATH"
 

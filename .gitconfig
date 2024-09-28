@@ -55,16 +55,12 @@
 	gpgsign = true
 [gpg]
 	format = ssh
-[gpg "ssh"]
-  program = "/opt/1Password/op-ssh-sign"
 
 [credential]
-	helper = 1password
+	helper = /usr/lib/git-core/git-credential-libsecret
 [includeIf "gitdir:~/.vscode/extensions/"]
 	path = ~/Projects/tmk04/.gitconfig
 [includeIf "gitdir:~/Projects/tmk04/"]
 	path = ~/Projects/tmk04/.gitconfig
-[includeIf "gitdir:~/Projects/klaytn/"]
-	path = ~/Projects/klaytn/.gitconfig
 [fetch]
 	writeCommitGraph = true
