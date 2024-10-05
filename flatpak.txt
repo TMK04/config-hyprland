@@ -2,7 +2,9 @@ com.github.Matoking.protontricks
 com.github.PintaProject.Pinta
 io.github.zen_browser.zen
 org.filezillaproject.Filezilla
+org.gnome.seahorse.Application
 org.kde.krita
 org.mozilla.firefox
 org.pulseaudio.pavucontrol
 org.rncbc.qpwgraph
+org.upscayl.Upscayl
