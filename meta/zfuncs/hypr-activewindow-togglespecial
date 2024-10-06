@@ -1,0 +1,9 @@
+anormal_id="$(~/meta/zfuncs/hypr-activeworkspace-id)"
+aspecial_id="special:special:${1:-anormal_id}"
+echo "$anormal_id, $aspecial_id"
+if [[ "$(hyprctl activewindow | sed '6!d')" =~ "$aspecial_id" ]]
+then
+  hyprctl dispatch movetoworkspace "$anormal_id"
+else
+  hyprctl dispatch movetoworkspace "$aspecial_id"
+fi

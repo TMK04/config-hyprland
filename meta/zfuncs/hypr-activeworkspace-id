@@ -1,0 +1,1 @@
+hyprctl activeworkspace | sed -E '1!d; s/^workspace ID (.+) \(.+/\1/'
