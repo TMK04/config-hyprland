@@ -7,5 +7,5 @@ for aservice in 'kmonad-all'
 do
   aservice_service="${aservice}.service"
   sudo systemctl restart "${aservice}"
-  foot zsh -c "journalctl -u '${aservice}' | tail; $SHELL"
+  kitty zsh -c "journalctl -u '${aservice}' | tail; $SHELL"
 done

@@ -37,8 +37,8 @@ let configOptions = {
         'imageViewer': "loupe",
         'network': "XDG_CURRENT_DESKTOP=\"gnome\" gnome-control-center wifi",
         'settings': "XDG_CURRENT_DESKTOP=\"gnome\" gnome-control-center",
-        'taskManager': "foot btop",
-        'terminal': "foot", // This is only for shell actions
+        'taskManager': "kitty btop",
+        'terminal': "kitty", // This is only for shell actions
     },
     'battery': {
         'low': 20,

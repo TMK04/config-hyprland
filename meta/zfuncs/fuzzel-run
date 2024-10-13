@@ -33,4 +33,4 @@ fi
 (( achoice += 1 ))
 achoice="${awhence_a[$achoice]}"
 
-foot zsh -c "$achoice; $SHELL"
+kitty --hold $achoice

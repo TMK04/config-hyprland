@@ -27,10 +27,11 @@
 !/.config/fcitx5/profile
 !/.config/fontconfig/
 !/.config/fontconfig/fonts.conf
-!/.config/foot/
-!/.config/foot/foot.ini
 !/.config/hypr/
 !/.config/hypr/**/*
+!/.config/kitty/
+!/.config/kitty/current-theme.conf
+!/.config/kitty/kitty.conf
 !/.config/op/
 !/.config/op/plugins.sh
 !/.config/systemd/
