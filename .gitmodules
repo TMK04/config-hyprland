@@ -17,3 +17,6 @@
 [submodule "meta/youtube-music"]
 	path = meta/youtube-music
 	url = https://github.com/th-ch/youtube-music
+[submodule "meta/clipse"]
+	path = meta/clipse
+	url = https://github.com/savedra1/clipse.git
