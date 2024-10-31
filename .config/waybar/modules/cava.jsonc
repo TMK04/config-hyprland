@@ -1,0 +1,10 @@
+"custom/cava": {
+	"format": "{}",
+	"exec-if": "!(pgrep -f waybar_cava.sh)",
+	"exec": "waybar_cava.sh",
+	"restart-interval": 5,
+	"on-click": "playerctl play-pause",
+	"on-click-right": "hyprctl dispatch togglespecialworkspace special:music",
+	"on-scroll-up": "playerctl previous",
+	"on-scroll-down": "playerctl next"
+},

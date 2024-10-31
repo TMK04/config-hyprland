@@ -1,6 +1,4 @@
-acmd_a="$(ps -u "$USER" | awk 'NR>1 { print $4 }')"
-
-if [ -f "$HOME/meta/youtube-music/pack/YTM.AppImage" ] && ! (echo "$acmd_a" | rg 'youtube-music' > /dev/null)
+if [ -f "$HOME/meta/youtube-music/pack/YTM.AppImage" ] && ! (pgrep -x youtube-music)
 then
   dex ~/.local/share/applications/youtube-music.desktop
 else

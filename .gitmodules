@@ -8,15 +8,18 @@
 [submodule "antidote"]
 	path = meta/antidote
 	url = https://github.com/mattmc3/antidote
+[submodule "clipse"]
+	path = meta/clipse
+	url = https://github.com/savedra1/clipse.git
 [submodule "fzf-tab"]
 	path = meta/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule "kmonad"]
 	path = meta/kmonad
 	url = https://github.com/kmonad/kmonad
-[submodule "meta/youtube-music"]
+[submodule "xdg-desktop-portal-termfilechooser"]
+	path = meta/xdg-desktop-portal-termfilechooser
+	url = https://github.com/boydaihungst/xdg-desktop-portal-termfilechooser
+[submodule "youtube-music"]
 	path = meta/youtube-music
 	url = https://github.com/th-ch/youtube-music
-[submodule "meta/clipse"]
-	path = meta/clipse
-	url = https://github.com/savedra1/clipse.git

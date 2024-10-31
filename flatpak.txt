@@ -1,12 +1,10 @@
 com.github.Matoking.protontricks
 com.github.PintaProject.Pinta
 com.github.finefindus.eyedropper
-com.parsecgaming.parsec
 io.github.zen_browser.zen
 org.filezillaproject.Filezilla
 org.gnome.seahorse.Application
 org.kde.krita
-org.mozilla.firefox
 org.pulseaudio.pavucontrol
 org.rncbc.qpwgraph
 org.upscayl.Upscayl
