@@ -1,0 +1,7 @@
+cd "$HOME/meta/youtube-music"
+apnpm="$HOME/.nvm/versions/node/$(cat "$HOME/.nvm/alias/default")/bin/pnpm"
+$apnpm install --frozen-lockfile &&\
+  $apnpm clean &&\
+  $apnpm build &&\
+  $apnpm electron-builder --linux AppImage -p never
+mv "$(find pack/ -name '*.AppImage' -print -quit)" 'pack/YTM.AppImage'
