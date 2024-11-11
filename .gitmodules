@@ -5,6 +5,10 @@
 	path = .nvm
 	url = https://github.com/nvm-sh/nvm
 
+[submodule "nvim"]
+	path = .config/nvim
+	url = https://github.com/NvChad/starter
+
 [submodule "antidote"]
 	path = meta/antidote
 	url = https://github.com/mattmc3/antidote

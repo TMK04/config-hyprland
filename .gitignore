@@ -39,6 +39,7 @@
 !/.config/kitty/theme.conf
 !/.config/op/
 !/.config/op/plugins.sh
+!/.config/nvim
 !/.config/rofi/
 !/.config/rofi/**/*
 !/.config/systemd/
