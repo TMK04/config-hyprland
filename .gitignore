@@ -74,6 +74,8 @@
 !/Projects/
 !/Projects/tmk04/
 !/Projects/tmk04/.gitconfig
+!/Projects/soloer/
+!/Projects/soloer/.gitconfig
 
 # Global
 .DS_Store
