@@ -129,7 +129,7 @@ raw_target = /dev/stdout
 data_format = ascii
 ascii_max_range = ${bar_range}
 [smoothing]
-noise_reduction = 0
+noise_reduction = 12
 EOF
 
 # Call the function
