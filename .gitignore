@@ -34,6 +34,7 @@
 !/.config/hyde/hyde.conf
 !/.config/hypr/
 !/.config/hypr/**/*
+.config/hypr/a/theme.conf
 !/.config/kitty/
 !/.config/kitty/kitty.conf
 !/.config/kitty/theme.conf
