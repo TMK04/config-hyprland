@@ -1,0 +1,8 @@
+[Install]
+WantedBy=multi-user.target
+
+[Unit]
+Description=ethtool eno1 gigabit
+
+[Service]
+ExecStart=ethtool -s eno1 speed 1000

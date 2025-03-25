@@ -2,5 +2,5 @@ if [ -f "$HOME/meta/youtube-music/pack/YTM.AppImage" ] && ! (pgrep -x youtube-mu
 then
   dex ~/.local/share/applications/youtube-music.desktop
 else
-  hyprctl dispatch togglespecialworkspace special:music
+  hyprctl dispatch togglespecialworkspace special:0
 fi
